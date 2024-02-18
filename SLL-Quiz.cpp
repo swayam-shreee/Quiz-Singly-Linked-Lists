@@ -11,7 +11,7 @@
 
 #include <cstddef>
 #include <cstdint>
-#include <format>
+//#include <format>
 #include <iostream>
 #include <new>
 #include <string>
@@ -41,7 +41,20 @@ struct SLL
   Node * insert_after( Node * position, T const & data )
   {
     ///////////////////////// TO-DO (1) //////////////////////////////
+    Node * newNode     = new Node( data );
 
+    if(position == nullptr ) {
+      _head = _tail = newNode;
+    } else {
+      newNode->_next = _head;
+      _head           = newNode;
+    }
+
+
+
+    ++_size;
+
+    return newNode;
     /////////////////////// END-TO-DO (1) ////////////////////////////
   }
 
@@ -66,7 +79,9 @@ int main()
        _tail -> 13
        _size = 3
   ///////////////////////// TO-DO (2) //////////////////////////////
-
+  // _head -> NULL
+  // _tail -> NULL
+  // _size = 0
   /////////////////////// END-TO-DO (2) ////////////////////////////
   #endif
   theList.print();
@@ -78,7 +93,9 @@ int main()
   // Be mindful to how you sketch.  Note the required 3 lines, attribute and null terminator names, and the arrow syntax
   #if 0
   ///////////////////////// TO-DO (3) //////////////////////////////
-
+  // _head -> 20 -> NULL
+  // _tail -> 20
+  // _size = 1
   /////////////////////// END-TO-DO (3) ////////////////////////////
   #endif
 
@@ -89,7 +106,9 @@ int main()
   // Be mindful to how you sketch.  Note the required 3 lines, attribute and null terminator names, and the arrow syntax
   #if 0
   ///////////////////////// TO-DO (4) //////////////////////////////
-
+  // _head -> 10 -> NULL
+  // _tail -> 10
+  // _size = 1
   /////////////////////// END-TO-DO (4) ////////////////////////////
   #endif
 
@@ -100,7 +119,9 @@ int main()
   // Be mindful to how you sketch.  Note the required 3 lines, attribute and null terminator names, and the arrow syntax
   #if 0
   ///////////////////////// TO-DO (5) //////////////////////////////
-
+  // _head -> 40 -> 20 -> NULL
+  // _tail -> 20
+  // _size = 2
   /////////////////////// END-TO-DO (5) ////////////////////////////
   #endif
 
@@ -111,7 +132,9 @@ int main()
   // Be mindful to how you sketch.  Note the required 3 lines, attribute and null terminator names, and the arrow syntax
   #if 0
   ///////////////////////// TO-DO (6) //////////////////////////////
-
+  // _head -> 20 -> NULL
+  // _tail -> 20
+  // _size = 1
   /////////////////////// END-TO-DO (6) ////////////////////////////
   #endif
 }
